@@ -1,6 +1,11 @@
 // grabbing colors from https://scotch.io/bar-talk/best-sublime-text-3-themes-of-2015-and-2016
 $main-grey-bg: #2F2833;
+$grey-bg-dark: #302C33;
+
 $text-main-pink: #FF99C6;
+$text-main-green: #B8FFB0;
+$text-main-orange: #EB5424;
+
 
 //  FONT STUFF
 
@@ -47,30 +52,48 @@ pre {
 
 //  END FONT STUFF
 
-
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
+//  TOP NAV
+.top-nav {
+  height: 4vh;
   background-color: $main-grey-bg;
-  height: 150px;
-  color: white;
+
+  a {
+    font-family: Inconsolata;
+    font-size: 20px;
+    text-decoration: none;
+    color: $text-main-pink;
+  }
 }
 
-.App-intro {
-  font-size: large;
+
+// HOME
+
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: $grey-bg-dark;
+  height: 100vh;
+
+  .greeting {
+    &.top {
+      color: $text-main-pink;
+    }
+    &.bottom {
+      color: $text-main-green;
+    }
+  }
+
+  .mugshot {
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+  }
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
+// END HOME
+
 
 // NOT FOUND PAGE //
 .not-found {
