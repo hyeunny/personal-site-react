@@ -1,4 +1,52 @@
-$main-grey: #222;
+// grabbing colors from https://scotch.io/bar-talk/best-sublime-text-3-themes-of-2015-and-2016
+$main-grey-bg: #2F2833;
+$text-main-pink: #FF99C6;
+
+//  FONT STUFF
+
+h1 {
+  font-family: Inconsolata;
+  font-size: 24px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 26.4px;
+}
+h3 {
+  font-family: Inconsolata;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 15.4px;
+}
+p {
+  font-family: Inconsolata;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+blockquote {
+  font-family: Inconsolata;
+  font-size: 21px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 30px;
+}
+pre {
+  font-family: Inconsolata;
+  font-size: 13px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 18.5714px;
+}
+
+//  END FONT STUFF
+
 
 .App {
   text-align: center;
@@ -10,7 +58,7 @@ $main-grey: #222;
 }
 
 .App-header {
-  background-color: $main-grey;
+  background-color: $main-grey-bg;
   height: 150px;
   color: white;
 }
@@ -26,6 +74,14 @@ $main-grey: #222;
 
 // NOT FOUND PAGE //
 .not-found {
-  background-color: $main-grey;
+  display: flex;
   height: 100vh;
+  align-items: center;
+  justify-content: center;
+
+  background-color: $main-grey-bg;
+
+  h1 {
+    color: $text-main-pink;
+  }
 }
