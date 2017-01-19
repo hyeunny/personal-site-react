@@ -8,7 +8,6 @@ $text-main-orange: #EB5424;
 
 
 //  FONT STUFF
-
 h1 {
   font-family: Inconsolata;
   font-size: 24px;
@@ -49,8 +48,15 @@ pre {
   font-weight: 400;
   line-height: 18.5714px;
 }
-
 //  END FONT STUFF
+
+
+//  ANIMATION STUFF
+@keyframes animation-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+//  END ANIMATION STUFF
 
 //  TOP NAV
 .top-nav {
@@ -89,6 +95,8 @@ pre {
     height: 200px;
     width: 200px;
     border-radius: 100%;
+
+    animation: animation-spin infinite 360s linear;
   }
 }
 

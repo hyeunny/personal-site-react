@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import mugShot from './hj_mugshot.jpg';
+import mugShot from './images/hj_mugshot.jpg';
 import './App.scss';
 
 class Home extends Component {
