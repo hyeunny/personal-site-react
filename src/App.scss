@@ -68,6 +68,9 @@ pre {
     font-size: 20px;
     text-decoration: none;
     color: $text-main-pink;
+    &:hover {
+      color: $text-main-orange;
+    }
   }
 }
 
@@ -75,19 +78,21 @@ pre {
 // HOME
 
 .home {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
   background-color: $grey-bg-dark;
   height: 100vh;
 
-  .greeting {
-    &.top {
-      color: $text-main-pink;
-    }
-    &.bottom {
-      color: $text-main-green;
+  .greeting-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 35vh;
+    .greeting {
+      &.top {
+        color: $text-main-pink;
+      }
+      &.bottom {
+        color: $text-main-green;
+      }
     }
   }
 
@@ -96,7 +101,12 @@ pre {
     width: 200px;
     border-radius: 100%;
 
-    animation: animation-spin infinite 360s linear;
+    animation: animation-spin infinite 3600s linear;
+  }
+
+  .acronym-expander {
+    margin-left: 20vw;
+    font-family: Inconsolata;
   }
 }
 
