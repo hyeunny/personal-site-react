@@ -55,7 +55,6 @@
     "react-router": "^3.0.2",
     "semantic-ui-react": "^0.64.2"
   },
-  "homepage": "https://hyeunny.github.io/personal-site-react",
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
