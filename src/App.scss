@@ -1,10 +1,12 @@
-// grabbing colors from https://scotch.io/bar-talk/best-sublime-text-3-themes-of-2015-and-2016
-$main-grey-bg: #2F2833;
-$grey-bg-dark: #302C33;
+// grabbing colors from http://vimcolors.com/64/monokai/dark
+$monokai-grey-dark: #1F201B;
+$monokai-grey-med: #272822;
+$monokai-grey-light: #75715E;
 
-$text-main-pink: #FF99C6;
-$text-main-green: #B8FFB0;
-$text-main-orange: #EB5424;
+$text-main-pink: #F92672;
+$text-main-green: #A6E22E;
+$text-main-purple: #AA81FF;
+$text-main-gold: #E6DB74;
 
 
 //  FONT STUFF
@@ -50,26 +52,51 @@ pre {
 }
 //  END FONT STUFF
 
+//  SEMANTIC UI OVERRIDES
+.ui.grid {
+  margin: 0;
+}
+//
+
 
 //  ANIMATION STUFF
 @keyframes animation-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  0% {transform:rotate(4deg);}
+  50% {transform:rotate(-4deg);}
+  100% {transform:rotate(4deg);}
 }
 //  END ANIMATION STUFF
 
 //  TOP NAV
 .top-nav {
-  height: 4vh;
-  background-color: $main-grey-bg;
+  overflow: scroll;
+  max-width: 100%;
+  text-align: right;
+  background-color: $monokai-grey-med;
+
+  .ui {
+    .button {
+      background-color: $monokai-grey-dark;  
+    }
+    .or {
+      background-color: black;
+      &:before {
+        background-color: $monokai-grey-dark;
+      }
+    }
+    .icon {
+      color: $text-main-pink;
+    }
+  }
+
 
   a {
     font-family: Inconsolata;
     font-size: 20px;
     text-decoration: none;
-    color: $text-main-pink;
+    color: $text-main-gold;
     &:hover {
-      color: $text-main-orange;
+      color: $text-main-purple;
     }
   }
 }
@@ -78,35 +105,36 @@ pre {
 // HOME
 
 .home {
-  background-color: $grey-bg-dark;
-  height: 100vh;
+  padding-top: 12.5%;
+  background-color: $monokai-grey-dark;
+  min-height: 100vh;
 
-  .greeting-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 35vh;
-    .greeting {
-      &.top {
-        color: $text-main-pink;
-      }
-      &.bottom {
-        color: $text-main-green;
-      }
-    }
+  .caption-top {
+    color: $text-main-pink;
+    margin-left: 27.5%;
+  }
+
+  .caption-bottom {
+    color: $text-main-green;
+    margin-right: 20%;
+    text-align: right;
   }
 
   .mugshot {
     height: 200px;
     width: 200px;
     border-radius: 100%;
+    margin: auto;
 
-    animation: animation-spin infinite 3600s linear;
+    animation: animation-spin infinite 3s linear;
   }
 
   .acronym-expander {
     margin-left: 20vw;
     font-family: Inconsolata;
+    .first-letter {
+      color: $text-main-purple;
+    }
   }
 }
 
@@ -120,7 +148,7 @@ pre {
   align-items: center;
   justify-content: center;
 
-  background-color: $main-grey-bg;
+  background-color: $monokai-grey-med;
 
   h1 {
     color: $text-main-pink;

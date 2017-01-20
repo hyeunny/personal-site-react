@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
+import { Grid, Image } from 'semantic-ui-react';
+import AcronymExpander from './components/AcronymExpander';
 import mugShot from './images/hj_mugshot.jpg';
 import './App.scss';
-import AcronymExpander from './components/AcronymExpander';
 
-const returnRandomColor = (colors = ['white', 'orange', 'yellow', 'green']) => {
+const COLORS = {
+  mainPink: '#F92672',
+  mainGreen: '#A6E22E'
+}
+
+const returnRandomColor = (colors = [COLORS.mainPink, COLORS.mainGreen]) => {
     return colors[Math.floor(Math.random() * colors.length)]
 }
 
@@ -18,18 +24,37 @@ class Home extends Component {
   componentDidMount() {
     setInterval(() => { 
         this.setState({style: {color: returnRandomColor()}}) }
-    , 200);
+    , 500);
   }
 
   render() {
     return (
       <div className="home">
-        <div className="greeting-container">
-            <h1 className="greeting top">Hello, I am Hyeunjoon.</h1>
-                <img className="mugshot" alt="myMug" src={mugShot} />
-            <h1 className="greeting bottom">..and I love building things on the web.</h1>
-        </div>
-        <AcronymExpander style={this.state.style} enteredWord="Hyeunjoon" />
+        <Grid divided="vertically">
+
+          <Grid.Row className="caption-top" columns={1}>
+            <Grid.Column>
+              <h1>Hello I am Hyeunjoon.</h1>
+            </Grid.Column>
+          </Grid.Row>
+
+          <Grid.Row columns={1}>
+            <Grid.Column>
+              <Image className="mugshot" src={mugShot} />
+            </Grid.Column>
+          </Grid.Row>
+
+          <Grid.Row className="caption-bottom" columns={1}>
+            <Grid.Column>
+              <h1>and I love building things on the web...</h1>
+            </Grid.Column>
+          </Grid.Row>
+
+          <Grid.Row>
+            <AcronymExpander style={this.state.style} enteredWord="Hyeunjoon" />
+          </Grid.Row>
+
+        </Grid>
       </div>
     );
   }

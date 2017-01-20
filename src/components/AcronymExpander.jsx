@@ -44,7 +44,12 @@ class AcronymExpander extends Component {
         style={style}
       >
         {indivLetters.map((letter, idx) => {
-          return <li key={idx}>{DICTIONARY[letter][Math.floor(Math.random()*DICTIONARY[letter].length)].toUpperCase()}</li>
+          const randomWord = DICTIONARY[letter][Math.floor(Math.random()*DICTIONARY[letter].length)].toUpperCase()
+
+          return <li key={idx}>
+                    <span className="first-letter">{randomWord[0]}</span>
+                    <span>{randomWord.substring(1)}</span>
+                  </li>
         })}
       </ul>
     );
