@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Grid, Image } from 'semantic-ui-react';
 import AcronymExpander from './components/AcronymExpander';
 import mugShot from './images/hj_mugshot.jpg';
+import termShot from './images/terminal.png';
 import './App.scss';
 
 const COLORS = {
@@ -21,6 +22,21 @@ class Home extends Component {
     }
   }
 
+  handleClick = () => {
+    fetch('http://freegeoip.net/json/', {
+      method: 'get'
+    })
+    .then((response) => {
+      return response.json()
+    })
+    .then((json) => {
+      alert(`Looks like your IP address is ${json.ip}, how is the weather over there in ${json.city}, ${json.country_name}?`)
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  }
+
   componentDidMount() {
     setInterval(() => { 
         this.setState({style: {color: returnRandomColor()}}) }
@@ -32,10 +48,10 @@ class Home extends Component {
       <div className="home">
         <Grid divided="vertically">
 
-          <Grid.Row className="caption-top" columns={1}>
+          <Grid.Row className="caption-top" columns={2}>
             <Grid.Column>
               <h1>Hello I am Hyeunjoon.</h1>
-            </Grid.Column>
+            </Grid.Column>              
           </Grid.Row>
 
           <Grid.Row columns={1}>
@@ -50,8 +66,13 @@ class Home extends Component {
             </Grid.Column>
           </Grid.Row>
 
-          <Grid.Row>
-            <AcronymExpander style={this.state.style} enteredWord="Hyeunjoon" />
+          <Grid.Row columns={2}>
+            <Grid.Column>
+              <AcronymExpander style={this.state.style} enteredWord="Hyeunjoon" />
+            </Grid.Column>
+            <Grid.Column only="computer">
+              <Image onClick={this.handleClick} className="termshot" src={termShot} />
+            </Grid.Column>
           </Grid.Row>
 
         </Grid>

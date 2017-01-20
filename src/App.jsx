@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import TopNav from './TopNav';
+import Footer from './Footer';
 import './App.scss';
 import { isMobile } from './utils/utils';
 
@@ -16,6 +17,7 @@ class App extends Component {
       <div className="app">
         <TopNav />
         {this.props.children}
+        <Footer />
       </div>
     );
   }

@@ -70,6 +70,7 @@ pre {
 //  TOP NAV
 .top-nav {
   overflow: scroll;
+  min-height: 5vh;
   max-width: 100%;
   text-align: right;
   background-color: $monokai-grey-med;
@@ -101,13 +102,30 @@ pre {
   }
 }
 
+//  FOOTER
+
+.footer {
+  background-color: $monokai-grey-med;
+  padding-top: 20px;
+  text-align: center;
+  min-height: 5vh;
+  span {
+    color: $text-main-gold;
+    font-family: Inconsolata;
+  }
+
+  .icon {
+    color: $text-main-pink;
+  }
+}
+
 
 // HOME
 
 .home {
-  padding-top: 12.5%;
+  padding-top: 5%;
   background-color: $monokai-grey-dark;
-  min-height: 100vh;
+  min-height: 90vh;
 
   .caption-top {
     color: $text-main-pink;
@@ -127,6 +145,11 @@ pre {
     margin: auto;
 
     animation: animation-spin infinite 3s linear;
+  }
+
+  .termshot {
+    cursor: pointer;
+    max-height: 400px;
   }
 
   .acronym-expander {
