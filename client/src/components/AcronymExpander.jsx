@@ -57,7 +57,8 @@ class AcronymExpander extends Component {
 }
 
 AcronymExpander.propTypes = {
-  enteredWord: React.PropTypes.string
+  enteredWord: React.PropTypes.string,
+  style: React.PropTypes.object
 };
 
 export default AcronymExpander;

@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "start-watch": "pm2 start server.js --watch"
+    "start": "nodemon server.js",
+    "pm2-watch": "pm2 start server.js --watch"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,10 @@
   "homepage": "https://github.com/hyeunny/personal-site-react#readme",
   "dependencies": {
     "express": "^4.14.0",
+    "formidable": "^1.1.1",
     "pm2": "^2.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
   }
 }
